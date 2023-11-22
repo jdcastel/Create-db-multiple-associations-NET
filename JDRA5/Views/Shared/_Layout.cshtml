@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - JDR2237A5</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="JDR2237A5" />
+    <meta name="application-name" content="2237-009dec76-fe39-45f0-a4c5-fa8dbef06062" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://cdn.jsdelivr.net/npm/@('@')popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("JDR2237A5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Genres", "Index", "Genre", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Actors", "Index", "Actor", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Shows", "Index", "Show", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Episodes", "Index", "Episode", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" aria-expanded="false" data-bs-toggle="dropdown">
+                            Load Data
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>@Html.ActionLink("Roles", "Roles", "LoadData", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Genres", "Genres", "LoadData", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                <li>@Html.ActionLink("Actors", "Actors", "LoadData", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                <li>@Html.ActionLink("Shows", "Shows", "LoadData", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                <li>@Html.ActionLink("Episodes", "Episodes", "LoadData", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            }
+                        </ul>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>
+                <small>
+                    By submitting this assignment you agree to the following:
+                    I declare that this assignment is my own work in accordance with the Seneca Academic
+                    Policy. No part of this assignment has been copied manually or electronically from
+                    any other source (including web sites) or distributed to other students.
+                </small>
+            </p>
+            <p>&copy; ~Juan David Rodriguez Castelblanco~, jdrodriguez-castelbl@myseneca.ca, WEB524, Fall 2023</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

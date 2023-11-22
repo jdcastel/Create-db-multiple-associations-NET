@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="appTitle">
+        <h1 id="appTitle">Assignment 5 - Juan David Rodriguez</h1>
+        <p><a href="https://jdrodriguez-wa-web524-a5.azurewebsites.net/" class="btn btn-primary btn-md">Assignment 5 on Azure &raquo;</a></p>
+        <p class="lead">This app creates a database from scratch and then tests the data from the db with its relationships done correctly.</p>
+    </section>
+
+    <div class="row mt-5">
+        <section class="col-md-6" aria-labelledby="whatILearned">
+            <h2 id="whatILearned">I learned ...</h2>
+            <p>I learned how to create a database from scratch in addition to adding the data and configuring the relationships so that later I can read the data, see the details and also create actors, shows and episodes with many-to-many related data.</p>
+        </section>
+        <section class="col-md-6" aria-labelledby="whatIStruggledWith">
+            <h2 id="whatIStruggledWith">I struggled with ...</h2>
+            <p>
+                1. Creating the project with the required Name does not let me create the database https://stackoverflow.com/questions/17012839/cannot-attach-the-file-mdf-as-database
+                There is some porbelma with that name<br/>
+                2. The relationships creating shows and episodes using many-to-many relationships was very complicated because if I wanted to update the database I had to create a new project because migrations whenever I change something in the Data folder migration doesnt work even if i delete the database using LoadData/RemoveDatabase
+            </p>
+        </section>
+    </div>
+</main>
